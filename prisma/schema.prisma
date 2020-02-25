@@ -1,0 +1,14 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres:postgres@localhost:5432/nexus-context-bug-repro"
+}
+
+generator prisma_client {
+  provider = "prisma-client-js"
+}
+
+model World {
+  id         Int    @id @default(autoincrement())
+  name       String @unique
+  population Float
+}
